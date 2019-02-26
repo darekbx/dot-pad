@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DotPad</string>
+    <string name="size_title">Sizes:</string>
+    <string name="google_account">darek.baranczuk@gmail.com</string>
+    <string name="calendar_events">content://com.android.calendar/events/</string>
+    <string name="calendar_reminders">content://com.android.calendar/reminders/</string>
+    <string name="active_key">active_dots</string>
+    <string name="search_hint">Search...</string>
+    <string name="load_all">Load all</string>
+
+    <string name="format_date">yyyy-MM-dd HH:mm</string>
+    <string name="format_index">%s.</string>
+    <string name="format_size" formatted="false">%02.0f - %06.0f</string>
+    <string name="format_day">%08.1f daily</string>
+    <string name="format_week">%08.1f weekly</string>
+    <string name="format_month">%08.1f monthly</string>
+    <string name="format_limit" formatted="false">%d, %d</string>
+    <string name="format_time_span" formatted="false">%s%s</string>
+    <string name="format_count">%08d dot count</string>
+    <string name="format_calendar_selection">%s = ?</string>
+    
+    <string name="dialog_dot_hint">Enter note</string>
+    <string name="dialog_delete_title">Choose action</string>
+    <string name="dialog_delete_delete">Delete</string>
+    <string name="dialog_delete_restore">Restore</string>
+    <string name="dialog_delete_cancel">Cancel</string>
+        
+    <string name="dialog_reminder_date_title">Choose date</string>
+    <string name="dialog_reminder_time_title">Choose time</string>
+    <string name="dialog_reminder_empty">No reminder</string>
+    <string name="dialog_reminder_summary" formatted="false">Reminder: %s-%02d-%02d %02d:%02d</string>
+    <string name="dialog_reminder_reset">Remove reminder?</string>
+    <string name="dialog_reminder_yes">Yes</string>
+    <string name="dialog_reminder_no">No</string>
+    <string name="dialog_is_sticked">Sticked</string>
+
+    <string name="menu_archive">Archive</string>
+    <string name="menu_statistics">Statistics</string>
+    <string name="menu_drag_on">Drag On</string>
+    <string name="menu_drag_off">Drag Off</string>
+    <string name="menu_all_on">Show all</string>
+    <string name="menu_all_off">Show active</string>
+    <string name="menu_list">Show list</string>
+
+    <string name="db_name">/dotpad.sqlite</string>
+    <string name="db_table_dots">dots</string>
+    <string name="db_insert_dot">INSERT INTO dots VALUES (null, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?)</string>
+    <string name="db_where_id">_id = ?</string>
+    <string name="db_where_archival">isArchival = ?</string>
+    <string name="db_dots_orderby_desc">date DESC</string>
+    <string name="db_dots_orderby_asc">date ASC</string>
+    <string name="db_dots_isarchival">isArchival</string>
+    <string name="db_dots_count_all">SELECT COUNT(`_id`) FROM `dots`</string>
+    <string name="db_dots_count_archival">SELECT COUNT(`_id`) FROM `dots` WHERE `isArchival` = 1</string>
+    <string name="db_dots_count_active">SELECT COUNT(`_id`) FROM `dots` WHERE `isArchival` = 0</string>
+    <string name="db_dots_group_size">SELECT COUNT(`_id`), `size` FROM `dots` GROUP BY `size`</string>
+    <string name="db_dots_group_color">SELECT COUNT(`_id`), `color` FROM `dots` GROUP BY `color`</string>
+    <string name="db_dots_group_month">SELECT COUNT(`_id`) FROM `dots` GROUP BY strftime(\'%m\', datetime(date / 1000, \'unixepoch\'))</string>
+    <string name="db_dots_group_week">SELECT COUNT(`_id`) FROM `dots` GROUP BY strftime(\'%W\', datetime(date / 1000, \'unixepoch\'))</string>
+	<string name="db_dots_group_day">SELECT COUNT(`_id`) FROM `dots` GROUP BY strftime(\'%Y-%m-%d\', datetime(date / 1000, \'unixepoch\'))</string>
+    <string name="db_dots_columns">PRAGMA table_info(dots)</string>
+    <string name="db_dots_add_reminder">ALTER TABLE `dots` ADD COLUMN `reminder` INTEGER NOT NULL DEFAULT 0</string>
+    <string name="db_dots_add_event_id">ALTER TABLE `dots` ADD COLUMN `event_id` INTEGER NOT NULL DEFAULT 0</string>
+    <string name="db_dots_add_reminder_id">ALTER TABLE `dots` ADD COLUMN `reminder_id` INTEGER NOT NULL DEFAULT 0</string>
+	
+    <string-array name="db_dots_columns">
+        <item>_id</item>
+        <item>text</item>
+        <item>color</item>
+        <item>size</item>
+        <item>x</item>
+        <item>y</item>
+        <item>date</item>
+        <item>isArchival</item>
+        <item>reminder</item>
+        <item>event_id</item>
+        <item>reminder_id</item>
+        <item>is_sticked</item>
+    </string-array>
+    
+    <string-array name="span_units">
+        <item>d</item>
+        <item>h</item>
+        <item>m</item>
+        <item>s</item>
+    </string-array>
+    
+</resources>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="312dip"
+    android:orientation="vertical"
+    android:padding="6dip"
+    android:baselineAligned="false"
+    android:background="#fff">
+
+    <EditText
+        android:id="@+id/dot_dialog_text"
+		android:layout_width="fill_parent"
+		android:layout_height="120dip"
+	    android:ems="10"
+	    android:padding="6dip"
+	    android:gravity="top"
+	    android:inputType="textMultiLine|textCapSentences"
+		android:textSize="14sp"
+		android:hint="@string/dialog_dot_hint"
+		android:background="@drawable/ed_style" />
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<TextView
+			android:id="@+id/dot_dialog_reminder_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:padding="6dip"
+			android:textSize="14sp"
+			android:text="@string/dialog_reminder_empty" />
+		<CheckBox
+			android:id="@+id/is_sticked"
+			android:layout_width="26dp"
+			android:layout_height="26dp"
+			android:layout_marginLeft="4dp"
+			android:layout_marginRight="2dp"
+			android:layout_centerVertical="true"
+			android:layout_alignParentRight="true"
+			android:button="@drawable/chb_default"
+			/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_toLeftOf="@id/is_sticked"
+			android:text="@string/dialog_is_sticked"
+			/>
+
+	</RelativeLayout>
+    
+    <com.dotpad.logic.RadioGroup 
+        android:id="@+id/dot_dialog_color"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+	    <com.dotpad.view.RadioColorView
+	        app:color="@color/red"
+        	app:checked="true"
+			style="@style/radio_dot" />
+	    <com.dotpad.view.RadioColorView
+	        app:color="@color/green"
+			style="@style/radio_dot" />
+	    <com.dotpad.view.RadioColorView
+	        app:color="@color/blue"
+			style="@style/radio_dot" />
+	    <com.dotpad.view.RadioColorView
+	        app:color="@color/violet"
+			style="@style/radio_dot" />
+	    <com.dotpad.view.RadioColorView
+	        app:color="@color/purple"
+			style="@style/radio_dot" />
+	    <com.dotpad.view.RadioColorView
+	        app:color="@color/yellow"
+			style="@style/radio_dot" />
+    </com.dotpad.logic.RadioGroup>
+
+    <com.dotpad.logic.RadioGroup 
+        android:id="@+id/dot_dialog_size"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+	    <com.dotpad.view.RadioSizeView
+	        app:size="10"
+        	app:checked="true"
+			style="@style/radio_dot" />
+	    <com.dotpad.view.RadioSizeView
+	        app:size="8"
+			style="@style/radio_dot" />
+	    <com.dotpad.view.RadioSizeView
+	        app:size="6"
+			style="@style/radio_dot" />
+	    <com.dotpad.view.RadioSizeView
+	        app:size="5"
+			style="@style/radio_dot" />
+    </com.dotpad.logic.RadioGroup>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+		<Button
+			android:id="@+id/dot_dialog_add"
+			android:layout_marginTop="8dip"
+			android:layout_width="0dip"
+			android:layout_height="48dip"
+			android:layout_weight="1"
+			android:background="@drawable/btn_add"
+			style="?android:attr/buttonBarButtonStyle" />
+		<Button
+			android:id="@+id/dot_dialog_reset"
+			android:layout_marginTop="8dip"
+			android:layout_marginLeft="4dip"
+			android:layout_width="48dip"
+			android:layout_height="48dip"
+			android:background="@drawable/btn_reset"
+			style="?android:attr/buttonBarButtonStyle" />
+		<Button
+			android:id="@+id/dot_dialog_reminder"
+			android:layout_marginTop="8dip"
+			android:layout_marginLeft="4dip"
+			android:layout_width="48dip"
+			android:layout_height="48dip"
+			android:background="@drawable/btn_reminder"
+			style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+
+</LinearLayout>
